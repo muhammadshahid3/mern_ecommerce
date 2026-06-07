@@ -10,9 +10,10 @@ services:
       networks:
         - mern-net
    backend:
-      build:
-        context: ./backend
-        dockerfile: Dockerfile
+      image: devopsabdullah45/mern-216-backend:v1
+      # build:
+      #   context: ./backend
+      #   dockerfile: Dockerfile
       container_name: backend
       depends_on:
         - mongodb
@@ -24,9 +25,10 @@ services:
         - ./backend/.env
   
    frontend:
-      build:
-        context: ./frontend
-        dockerfile: Dockerfile
+      image: devopsabdullah45/mern-216-frontend:v1
+      # build:
+      #   context: ./frontend
+      #   dockerfile: Dockerfile
       container_name: frontend
       depends_on:
         - backend
